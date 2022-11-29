@@ -1,0 +1,155 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-user">
+                    <div class="content">
+                        <div class="author">
+                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.employee.image" src="{{ url + '/' + Row.data?.employee.image }}" />
+                            <img class="avatar-profile border-white-2" *ngIf="!Row.data?.employee.image" src="assets/img/faces/default-avatar.png" />
+                            
+                            <br>
+                            <h4 class="title text-center">{{ Row.data.employee.names }}<br />
+                                <small>{{ Row.data.employee.lastname }}</small>
+                            </h4>
+                        </div>
+                        
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12">
+                                <h5 class="title"><i class="pe-7s-user"></i> {{ 'PROFILE.PERSONAL' | translate }}</h5>
+                                <label>{{ 'PROFILE.NAMES' | translate }}:</label> <span>{{ Row.data?.employee.names }}</span><br>
+                                <label>{{ 'PROFILE.LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.lastname }}</span><br>
+                                <label>{{ 'PROFILE.MOTHER_LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.mother_lastname }}</span><br>
+                                <label>{{ 'PROFILE.GENDER' | translate }}:</label> <span>{{ 'PROFILE.' + Row.data?.employee.sex | uppercase | translate }}</span><br>
+                                <label>{{ 'PROFILE.BIRTHDAY' | translate }}:</label> <span>{{ (Row.data?.employee.birthday != "NOT_AVAILABLE")? Row.data?.employee.birthday :"ERRORS.NOT_AVAILABLE" | translate }}</span><br>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12">
+                                <h5 class="title"><i class="pe-7s-portfolio"></i> {{ 'PROFILE.OCCUPATIONALS' | translate }}</h5>
+                                <label>{{ 'PROFILE.POSITION_JOB' | translate }}:</label> <span>{{ Row.data?.employee.position_job }}</span><br>
+                                <label>{{ 'PROFILE.SALARY' | translate }}:</label> <span>{{ Row.data?.employee.salary }}</span><br>
+                                <label>{{ 'DATE.HIRING_DATE' | translate }}:</label> <span>{{ Row.data?.employee.hiring_date }}</span><br>
+                                <label>{{ 'LIST.STATUS' | translate }}:</label> <span>{{ 'LIST.' + Row.data?.employee.status | uppercase | translate }}</span><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <hr />
+                        <div class="col-md-6">
+                            <!-- <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.previous }]"><i class="fa fa-angle-left"></i></button>
+                            <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.next }]"><i class="fa fa-angle-right"></i></button> -->
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-simple btn-theme" [routerLink]="['../save', { item_id:item_id }]"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-simple btn-info" [routerLink]="['../list']"><i class="fa fa-list"></i></button>
+                            <button class="btn btn-simple btn-danger" (click)="confirmDelete()"><i class="fa fa-times"></i></button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{ "PROFILE.BENEFICIARIES" | translate }} </h4>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>{{ 'PROFILE.NAMES' | translate }}</th>
+                                        <th class="text-center">{{ 'PROFILE.RELATIONSHIP' | translate  }}</th>
+                                        <th class="text-center">{{ 'LIST.ACTIONS' | translate  }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of TableBeneficiary.dataRows; let i = index">
+                                        <td><i [ngClass]="[row?.icon]"></i> {{ row.names }}</td>
+                                        <th class="text-center ">{{ row.relationship }}</th>
+                                        <td class="text-center">
+                                            <a title="{{ 'LIST.VIEW' | translate }}" class="btn btn-simple btn-xs btn-info" [routerLink]="['../../beneficiary/view', { item_id:row.item_id }]"><i class="fa fa-eye"></i></a>
+                                            <a title="{{ 'LIST.EDIT' | translate }}" class="btn btn-simple btn-xs btn-theme" [routerLink]="['../../beneficiary/save', { item_id:row.item_id }]"><i class="fa fa-edit"></i></a>
+                                            <a title="{{ 'LIST.DELETE' | translate }}" class="btn btn-simple btn-xs btn-danger" (click)="confirmDeleteBeneficiary(row.item_id)"><i class="fa fa-times"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{ Row.data?.employee.fullname }}
+                            <br /><small class="category"><label>{{ Row.data?.employee.birthday }}</label></small>
+                        </h4>
+                    </div>
+                    <div class="content content-full-width">
+                        <ul role="tablist" class="nav nav-tabs">
+                            <li class="active"><a href="#tab-profile" data-toggle="tab"><i class="fa fa-user"></i> {{ 'PROFILE.PROFILE' | translate }}</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="tab-profile" class="tab-pane active">
+                                <div class="description">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5 class="title">{{ 'PROFILE.PERSONAL' | translate }}</h5>
+                                            <label>{{ 'PROFILE.NAMES' | translate }}:</label> <span>{{ Row.data?.employee.names }}</span><br>
+                                            <label>{{ 'PROFILE.LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.lastname }}</span><br>
+                                            <label>{{ 'PROFILE.MOTHER_LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.mother_lastname }}</span><br>
+                                            <label>{{ 'PROFILE.GENDER' | translate }}:</label> <span>{{ 'PROFILE.' + Row.data?.employee.sex | uppercase | translate }}</span><br>
+                                            <label>{{ 'PROFILE.BIRTHDAY' | translate }}:</label> <span>{{ (Row.data?.employee.birthday != "NOT_AVAILABLE")? Row.data?.employee.birthday :"ERRORS.NOT_AVAILABLE" | translate }}</span><br>
+                                            <label>{{ 'PROFILE.RFC' | translate }}:</label> <span>{{ Row.data?.employee.rfc }}</span><br>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5 class="title">{{ 'PROFILE.BENEFICIARIES' | translate }}</h5>
+                                            <label>{{ 'PROFILE.PROMOTER' | translate }}:</label> <span>{{ Row.data?.beneficiary.fullname }}</span><br>
+                                        </div>
+                                    </div> 
+                                    
+                                    <hr />
+                                    <h5 class="title">{{ 'LIST.STATUS' | translate }}</h5>
+                                    <label>{{ 'LIST.LOCKED' | translate }}:</label> <span>{{ ((Row.data?.employee.locked == 0)? 'LIST.YES' : 'LIST.NO') | translate }}</span><br />
+                                    <label>{{ 'PROFILE.REGISTER_DATE' | translate }}:</label> <span>{{ (Row.data?.employee.formatted_date != "NOT_AVAILABLE")? Row.data?.employee.formatted_date :"ERRORS.NOT_AVAILABLE" | translate }}</span><br />
+                                    
+                                </div>
+                            </div>
+                            
+                            <div id="tab-loans" class="tab-pane">
+                                <div class="description">
+                                    <list_component-beneficiary [data]="data_beneficiary"></list_component-beneficiary>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <hr />
+                            <div class="col-md-4">
+                                <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.previous }]"><i class="fa fa-angle-left"></i></button>
+                                <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.next }]"><i class="fa fa-angle-right"></i></button>
+                            </div>
+                            <div class="col-md-8 text-right">
+                                <button class="btn btn-simple btn-theme" [routerLink]="['../save', { item_id:item_id }]"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-simple btn-info" [routerLink]="['../list']"><i class="fa fa-list"></i></button>
+                                <button class="btn btn-simple btn-danger" (click)="confirmDelete()"><i class="fa fa-times"></i></button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

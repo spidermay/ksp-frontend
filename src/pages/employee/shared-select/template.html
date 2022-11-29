@@ -1,0 +1,4 @@
+<div class="form-group">
+    <label class="control-label">{{ data?.label }} <span *ngIf="data?.required" class="star">*</span></label>
+    <select class="form-control selectpicker" data-title="{{ data?.label }}" name="{{ data?.id }}" id="{{ data?.id }}" data-live-search="true" (change)="onSelectChange($event)" [(ngModel)]="return_data" [disabled]="data?.disabled"></select>
+</div>

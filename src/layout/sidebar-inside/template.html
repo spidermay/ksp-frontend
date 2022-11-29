@@ -1,0 +1,42 @@
+<div class="logo">
+    <div class="text-center">
+        <img src="../assets/img/logo/small.png" style="max-width:80px;"/>
+    </div>
+    <div class="info">
+        <!-- <span> {{ project_name }}</span> -->
+    </div>
+</div>
+
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let row of menuItems">
+            <!--If is a single link-->
+            <a [routerLink]="[row.module]" *ngIf="row.type === 'link'">
+                <i class="{{ row.icontype }}"></i>
+                <p>{{ row.title | translate }}</p>
+            </a>
+            
+            <!--If it have a submenu-->
+            <a data-toggle="collapse" href="#{{ row.id }}" *ngIf="row.type === 'sub'">
+                <i class="{{ row.icontype }}"></i>
+                <p>{{ row.title | translate }}<b class="caret"></b></p>
+            </a>
+
+            <!--Display the submenu items-->
+            <div id="{{ row.id }}" class="collapse" *ngIf="row.type === 'sub'">
+                <ul class="nav">
+                    <li routerLinkActive="active" *ngFor="let child of row.children">
+                        <a *ngIf="row.module && child.module == undefined" [routerLink]="[row.module, child.path]">
+                            <span class="sidebar-mini">{{ child.shorten }}</span>
+                            <span class="sidebar-normal">{{ child.title | translate }}</span>
+                        </a>
+                        <a *ngIf="child.module" [routerLink]="[child.module, child.path]">
+                            <span class="sidebar-mini">{{ child.shorten }}</span>
+                            <span class="sidebar-normal">{{ child.title | translate }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

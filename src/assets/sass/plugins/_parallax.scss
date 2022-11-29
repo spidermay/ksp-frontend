@@ -1,0 +1,31 @@
+.parallax-content {
+    overflow: hidden;
+    min-height: 400px;
+    position:relative !important;
+}
+
+.parallax-background {
+    // z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute !important;
+    background-position: center center;
+}
+
+h1.parallax-title {
+    color:white;
+    font-size: 5em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+h2.parallax-title {
+    color:white;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}

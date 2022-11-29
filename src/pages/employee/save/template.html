@@ -1,0 +1,119 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-wizard" id="wizardCard">
+                    <form id="myForm" #myForm="ngForm">
+
+                        <div class="header text-center">
+                            <h3 *ngIf="!Row.data.employee.employee_id" class="title">{{ 'PROFILE.NEW_PROFILE' | translate }}</h3>
+                            <h3 *ngIf="Row.data.employee.employee_id >= 1" class="title">{{ 'PROFILE.EDIT_PROFILE' | translate }}</h3>
+                            <p class="category">{{ 'PROFILE.INFO_EDIT' | translate }}</p>
+                        </div>
+
+                        <div class="content">
+                            <h5>{{ 'PROFILE.DATA_PERSONAL' | translate }}</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ 'PROFILE.NAMES' | translate }} <span class="star">*</span></label>
+                                        <input class="form-control" type="text" placeholder="{{ 'PROFILE.NAMES' | translate }}" [(ngModel)]="Row.data.employee.names" name="names" id="names" #names="ngModel" autocomplete="false" required />
+                                        <p [hidden]="names.valid || submitted == false" class="text-danger">{{ 'ERRORS.REQUIRED_FIELD' | translate }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ 'PROFILE.LASTNAME' | translate }} <span class="star">*</span></label>
+                                        <input class="form-control" type="text" placeholder="{{ 'PROFILE.LASTNAME' | translate }}" [(ngModel)]="Row.data.employee.lastname" name="lastname" id="lastname"  #lastname="ngModel" autocomplete="false"/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ 'PROFILE.MOTHER_LASTNAME' | translate }}</label>
+                                        <input class="form-control" type="text" placeholder="{{ 'PROFILE.MOTHER_LASTNAME' | translate }}" [(ngModel)]="Row.data.employee.mother_lastname" name="mother_lastname" id="mother_lastname" #mother_lastname="ngModel" autocomplete="false" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" stacked>{{ 'PROFILE.BIRTHDAY' | translate }}:</label>
+                                        <input class="form-control datepicker" type="text" placeholder="{{ 'PROFILE.BIRTHDAY' | translate }}" [(ngModel)]="Row.data.employee.birthday" #birthday="ngModel" name="birthday" id="birthday" autocomplete="false" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="label-title">{{ 'PROFILE.GENDER' | translate }} <span class="star">*</span></label>
+                                    <select class="form-control selectpicker" data-title="{{ 'PROFILE.GENDER' | translate }}" [(ngModel)]="Row.data.employee.sex" id="sex" name="sex" #sex="ngModel"> 
+                                        <option value="female">{{ 'PROFILE.FEMALE' | translate }}</option>
+                                        <option value="male">{{ 'PROFILE.MALE' | translate }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label" stacked>{{ 'DATE.HIRING_DATE' | translate }}:</label>
+                                        <input class="form-control datepicker" type="text" placeholder="{{ 'DATE.HIRING_DATE' | translate }}" [(ngModel)]="Row.data.employee.hiring_date" #hiring_date="ngModel" name="hiring_date" id="hiring_date" autocomplete="false" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ 'PROFILE.POSITION_JOB' | translate }}</label>
+                                        <input class="form-control" type="text" placeholder="{{ 'PROFILE.POSITION_JOB' | translate }}" [(ngModel)]="Row.data.employee.position_job" name="position_job" id="position_job" #position_job="ngModel" autocomplete="false" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">{{ 'PROFILE.SALARY' | translate }}</label>
+                                        <input class="form-control" type="text" placeholder="{{ 'PROFILE.SALARY' | translate }}" [(ngModel)]="Row.data.employee.salary" name="salary" id="salary" #salary="ngModel" autocomplete="false" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="label-title">{{ 'PROFILE.STATUS' | translate }} <span class="star">*</span></label>
+                                    <select class="form-control selectpicker" data-title="{{ 'PROFILE.STATUS' | translate }}" [(ngModel)]="Row.data.employee.status" id="status" name="status" #status="ngModel"> 
+                                        <option value="active">{{ 'LIST.ACTIVE' | translate }}</option>
+                                        <option value="inactive">{{ 'LIST.INACTIVE' | translate }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="image">{{ 'PROFILE.PHOTO' | translate }} </label>
+                                        <input class="form-control" type="file" placeholder="{{ 'PROFILE.PHOTO' | translate }}" name="image" id="image" (change)="detectFiles($event, 'image')" accept=".jpg, .jpeg, .png" />
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-2 text-center">
+                                    <div class="form-group">
+                                        <label class="control-label" for="image">{{ 'PROFILE.PREVIEW' | translate }}</label><br>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="footer">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-danger btn-fill btn-block" (click)="cancel()"><i class="fa fa-close"></i> {{ 'BUTTONS.CANCEL' | translate }}</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-theme btn-fill btn-block" (click)="save(myForm)"><i class="fa fa-save"></i> {{ 'BUTTONS.SAVE' | translate }}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+/* [ PADDING ] ////////////////////////////////////////////////////////////////// */
+
+@each $color, $value in $colors {
+    .border-t-#{$color}, .border-tb-#{$color}, .border-all-#{$color}, .border-#{$color} {
+        border-top: 1px solid $value !important;
+    }
+    
+    .border-b-#{$color}, .border-tb-#{$color}, .border-all-#{$color}, .border-#{$color} {
+        border-bottom: 1px solid $value !important;
+    }
+
+	.border-l-#{$color}, .border-lr-#{$color}, .border-all-#{$color}, .border-#{$color} {
+        border-left: 1px solid $value !important;
+    }
+
+	.border-r-#{$color}, .border-lr-#{$color}, .border-all-#{$color}, .border-#{$color} {
+        border-right: 1px solid $value !important;
+    }
+
+    .border-dotted-t-#{$color}, .border-dotted-tb-#{$color}, .border-dotted-all-#{$color}, .border-dotted-#{$color} {
+        border-top: 1px solid $value !important;
+    }
+    
+    .border-dotted-b-#{$color}, .border-dotted-tb-#{$color}, .border-dotted-all-#{$color}, .border-dotted-#{$color} {
+        border-bottom: 1px solid $value !important;
+    }
+
+	.border-dotted-l-#{$color}, .border-dotted-lr-#{$color}, .border-dotted-all-#{$color}, .border-dotted-#{$color} {
+        border-left: 1px solid $value !important;
+    }
+
+	.border-dotted-r-#{$color}, .border-dotted-lr-#{$color}, .border-dotted-all-#{$color}, .border-dotted-#{$color} {
+        border-right: 1px solid $value !important;
+    }
+}

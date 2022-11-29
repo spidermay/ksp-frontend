@@ -1,0 +1,28 @@
+/* [ MARGIN ] ////////////////////////////////////////////////////////////////// */
+
+$margin-base: 15px !default;
+$margin-base-vertical: 15px !default;
+$margin-large-vertical: 30px !default;
+$margin-bottom: 0 0 10px 0 !default;
+
+@for $i from 0 through 500 {
+	.m-t-#{$i}, .m-tb-#{$i}, .m-all-#{$i} {
+        margin-top: #{$i}px !important;
+    }
+
+	.m-b-#{$i}, .m-tb-#{$i}, .m-all-#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+
+	.m-l-#{$i}, .m-lr-#{$i}, .m-all-#{$i} {
+        margin-left: #{$i}px !important;
+    }
+
+	.m-r-#{$i}, .m-lr-#{$i}, .m-all-#{$i} {
+        margin-right: #{$i}px !important;
+    }
+}
+
+.m-l-auto { margin-left: auto; }
+.m-r-auto { margin-right: auto; }
+.m-lr-auto { margin-left: auto; margin-right: auto; }

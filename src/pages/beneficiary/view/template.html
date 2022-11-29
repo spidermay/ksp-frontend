@@ -1,0 +1,106 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="content">
+                        <div class="author">
+                            <h5 class="title text-center">{{ 'PROFILE.BENEFICIARY' | translate }}</h5>
+                            <br>
+
+                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.beneficiary.image" src="{{ url + 'beneficiary/storage/' + Row.data?.beneficiary.image }}" />
+                            <img class="avatar-profile border-white-2" *ngIf="!Row.data?.beneficiary.image" src="assets/img/faces/default-avatar.png" />
+                            
+                            <br>
+                            <h4 class="title text-center">{{ Row.data.beneficiary.names }}<br />
+                                <small>{{ Row.data.beneficiary.lastname }}</small>
+                            </h4>
+                        </div>
+                        
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12">
+                                <h5 class="title"><i class="pe-7s-user"></i> {{ 'PROFILE.PERSONAL' | translate }}</h5>
+                                <label>{{ 'PROFILE.NAMES' | translate }}:</label> <span>{{ Row.data?.beneficiary.names }}</span><br>
+                                <label>{{ 'PROFILE.LASTNAME' | translate }}:</label> <span>{{ Row.data?.beneficiary.lastname }}</span><br>
+                                <label>{{ 'PROFILE.MOTHER_LASTNAME' | translate }}:</label> <span>{{ Row.data?.beneficiary.mother_lastname }}</span><br>
+                                <label>{{ 'PROFILE.GENDER' | translate }}:</label> <span>{{ 'PROFILE.' + Row.data?.beneficiary.sex | uppercase | translate }}</span><br>
+                                <label>{{ 'PROFILE.BIRTHDAY' | translate }}:</label> <span>{{ (Row.data?.beneficiary.birthday != "NOT_AVAILABLE")? Row.data?.beneficiary.birthday :"ERRORS.NOT_AVAILABLE" | translate }}</span><br>
+                                <label>{{ 'PROFILE.RELATIONSHIP' | translate }}:</label> <span>{{ Row.data?.beneficiary.relationship }}</span><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <hr />
+                        <div class="col-md-6">
+                            <!-- <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.previous }]"><i class="fa fa-angle-left"></i></button>
+                            <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.next }]"><i class="fa fa-angle-right"></i></button> -->
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-simple btn-theme" [routerLink]="['../save', { item_id:item_id }]"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-simple btn-info" [routerLink]="['../list']"><i class="fa fa-list"></i></button>
+                            <button class="btn btn-simple btn-danger" (click)="confirmDelete()"><i class="fa fa-times"></i></button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="content">
+                        <div class="author">
+                            <h5 class="title text-center">{{ 'PROFILE.EMPLOYEE' | translate }}</h5>
+                            <br>
+
+                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.employee.image" src="{{ url + 'employee/storage/' + Row.data?.employee.image }}" />
+                            <img class="avatar-profile border-white-2" *ngIf="!Row.data?.employee.image" src="assets/img/faces/default-avatar.png" />
+                            
+                            <br>
+                            <h4 class="title text-center">{{ Row.data.employee.names }}<br />
+                                <small>{{ Row.data.employee.lastname }}</small>
+                            </h4>
+                        </div>
+                        
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12">
+                                <h5 class="title"><i class="pe-7s-user"></i> {{ 'PROFILE.PERSONAL' | translate }}</h5>
+                                <label>{{ 'PROFILE.NAMES' | translate }}:</label> <span>{{ Row.data?.employee.names }}</span><br>
+                                <label>{{ 'PROFILE.LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.lastname }}</span><br>
+                                <label>{{ 'PROFILE.MOTHER_LASTNAME' | translate }}:</label> <span>{{ Row.data?.employee.mother_lastname }}</span><br>
+                                <label>{{ 'PROFILE.GENDER' | translate }}:</label> <span *ngIf="Row.data?.employee.sex">{{ 'PROFILE.' + Row.data?.employee.sex | uppercase | translate }}</span><br>
+                                <label>{{ 'PROFILE.BIRTHDAY' | translate }}:</label> <span>{{ (Row.data?.employee.birthday != "NOT_AVAILABLE")? Row.data?.employee.birthday :"ERRORS.NOT_AVAILABLE" | translate }}</span><br>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12">
+                                <h5 class="title"><i class="pe-7s-portfolio"></i> {{ 'PROFILE.OCCUPATIONALS' | translate }}</h5>
+                                <label>{{ 'PROFILE.POSITION_JOB' | translate }}:</label> <span>{{ Row.data?.employee.position_job }}</span><br>
+                                <label>{{ 'PROFILE.SALARY' | translate }}:</label> <span>{{ Row.data?.employee.salary }}</span><br>
+                                <label>{{ 'DATE.HIRING_DATE' | translate }}:</label> <span>{{ Row.data?.employee.hiring_date }}</span><br>
+                                <label>{{ 'LIST.STATUS' | translate }}:</label> <span *ngIf="Row.data?.employee.status">{{ 'LIST.' + Row.data?.employee.status | uppercase | translate }}</span><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <hr />
+                        <div class="col-md-6">
+                            <!-- <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.previous }]"><i class="fa fa-angle-left"></i></button>
+                            <button class="btn btn-simple btn-info" [routerLink]="[{ item_id:Row.data?.pager.next }]"><i class="fa fa-angle-right"></i></button> -->
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-simple btn-theme" [routerLink]="['../../employee/view', { item_id:Row.data.employee.employee_id }]"><i class="fa fa-eye"></i></button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

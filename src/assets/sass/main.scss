@@ -1,0 +1,84 @@
+/*!
+
+ =========================================================
+ * spider-admin - v2.0
+ =========================================================
+
+ * Product Page: https://www.stilosfrescos.xyz/product/spider-admin
+ * Copyright 2020 https://www.stilosfrescos.xyz)
+
+ * Designed & Coded by www.stilosfrescos.xyz
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+// variables and mixins
+@import "spider/colors";
+@import "core/variables";
+@import "core/mixins";
+
+@import "spider/bg_colors";
+@import "spider/padding";
+@import "spider/margin";
+@import "spider/border";
+@import "spider/box";
+
+//plugins css
+@import "plugins/animate";
+@import "plugins/sweetalert2";
+@import "plugins/datetime-picker";
+@import "plugins/jquery.jvectormap";
+@import "plugins/bootstrap-table";
+@import "plugins/datatables.net";
+@import "plugins/fullcalendar";
+@import "plugins/chartist";
+@import "plugins/perfect-scrollbar";
+@import "plugins/bootstrap-select";
+@import "plugins/fixed-plugin";
+@import "plugins/nouislider";
+@import "plugins/tags";
+@import "plugins/parallax";
+@import "plugins/modal";
+@import "plugins/ngx-infinite-scroll";
+
+// Core CSS
+@import "core/sidebar-and-main-panel";
+@import "core/buttons";
+@import "core/misc";
+@import "core/inputs";
+@import "core/progress-bars";
+@import "core/sliders";
+@import "core/forms";
+@import "core/alerts";
+@import "core/tables";
+@import "core/tooltips-and-popovers";
+@import "core/checkbox-radio-switch";
+@import "core/navbars";
+@import "core/footers";
+@import "core/labels";
+@import "core/typography";
+
+// Fancy Stuff
+@import "core/social-buttons";
+@import "core/dropdown";
+@import "core/cards";
+@import "core/collapse";
+@import "core/carousel";
+
+// Responsive adjustments
+@import "core/responsive";
+@import "core/tabs-navs-pagination";
+
+// Dashboard
+@import "dashboard/adjustments";
+@import "dashboard/print";
+
+// SCSS for Pages
+@import "core/pages";
+@import "pages/login.scss";
+@import "pages/signup.scss";
+@import "pages/pricnig.scss";
+@import "pages/lockscreen.scss";

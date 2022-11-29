@@ -1,0 +1,41 @@
+<div class="table-full-width infinite-scroll" infinite-scroll [scrollWindow]="false" [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5" (scrolled)="onScrollDown()" >
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let column of Table.headerColumns" class="{{ column.class }}">
+                    <span (click)="sorterFields(column.field)">
+                        <i *ngIf="column.sortable" class="fa fa-sort" id="sortable_{{ column.field }}"></i>
+                        {{ (column.value != undefined)? column.value : column }}
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngIf="Table.dataRows.length > 0">
+            <tr *ngFor="let row of Table.dataRows; let i = index">
+                <td>{{ i +1 }}</td>
+                <td>{{ row.item_id }}</td>
+                <td>{{ row.fullname }}</td>
+                <td>{{ row.employee_fullname }}</td>
+                <td>{{ row.relationship }}</td>
+                <td class="td-actions">
+                    <a title="{{ 'LIST.VIEW' | translate }}" class="btn btn-simple btn-xs btn-info" [routerLink]="['../../beneficiary/view', { item_id:row.item_id }]"><i class="fa fa-eye"></i></a>
+                    <a title="{{ 'LIST.EDIT' | translate }}" class="btn btn-simple btn-xs btn-theme" [routerLink]="['../../beneficiary/save', { item_id:row.item_id }]"><i class="fa fa-edit"></i></a>
+                    <a title="{{ 'LIST.DELETE' | translate }}" class="btn btn-simple btn-xs btn-danger" (click)="confirmDelete(row.item_id)"><i class="fa fa-times"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row p-t-8">
+    <hr />
+    <div class="pull-right text-right col-md-2">
+        <button class="btn btn-simple mr-1 text-info" (click)="selectDownload()"><i class="fa fa-download"></i></button> 
+        <button class="btn btn-simple btn-theme mr-1" [routerLink]="['../../beneficiary/save']"><i class="fa fa-plus"></i></button> 
+    </div>
+
+    <div class="col-md-2">
+        <span>{{ 'LIST.TOTAL' | translate }} {{ Table.summary?.total }}</span> 
+    </div>
+    <div class="clearfix"></div>
+</div>

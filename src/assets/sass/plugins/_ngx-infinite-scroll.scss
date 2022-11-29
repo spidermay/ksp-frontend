@@ -1,0 +1,32 @@
+.infinite-scroll,
+.infinite-scroll-full,
+.infinite-scroll-with-header,
+.tab-content .infinite-scroll,
+.tab-content .infinite-scroll-with-header,
+.tab-content .infinite-scroll-with-header {
+    overflow: scroll;
+    overflow-y: scroll;
+    // border:1px solid red;
+}
+
+.infinite-scroll {
+    height: calc(85vh - 210px);
+}
+
+.infinite-scroll-full {
+    height: calc(95vh - 190px);
+    // border:1px solid red;
+}
+
+.infinite-scroll-with-header {
+    height: calc(55vh - 240px);
+    // border: 1px solid red;
+}
+
+.tab-content .infinite-scroll {
+    height: calc(65vh - 130px);
+}
+
+.tab-content .infinite-scroll-with-header {
+    height: calc(65vh - 210px);
+}
