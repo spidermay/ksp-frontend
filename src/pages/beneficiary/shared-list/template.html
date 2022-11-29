@@ -14,6 +14,10 @@
             <tr *ngFor="let row of Table.dataRows; let i = index">
                 <td>{{ i +1 }}</td>
                 <td>{{ row.item_id }}</td>
+                <td>
+                    <img class="avatar border-white-2" *ngIf="row.image" src="{{ url + 'static/storage/beneficiary/' + row.image }}" />
+                    <img class="avatar border-white-2" *ngIf="!row.image" src="assets/img/faces/default-avatar.png" />
+                </td>
                 <td>{{ row.fullname }}</td>
                 <td>{{ row.employee_fullname }}</td>
                 <td>{{ row.relationship }}</td>

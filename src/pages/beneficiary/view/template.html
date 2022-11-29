@@ -8,7 +8,7 @@
                             <h5 class="title text-center">{{ 'PROFILE.BENEFICIARY' | translate }}</h5>
                             <br>
 
-                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.beneficiary.image" src="{{ url + 'beneficiary/storage/' + Row.data?.beneficiary.image }}" />
+                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.beneficiary.image" src="{{ url + 'static/storage/beneficiary/' + Row.data?.beneficiary.image }}" />
                             <img class="avatar-profile border-white-2" *ngIf="!Row.data?.beneficiary.image" src="assets/img/faces/default-avatar.png" />
                             
                             <br>
@@ -54,7 +54,7 @@
                             <h5 class="title text-center">{{ 'PROFILE.EMPLOYEE' | translate }}</h5>
                             <br>
 
-                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.employee.image" src="{{ url + 'employee/storage/' + Row.data?.employee.image }}" />
+                            <img class="avatar-profile border-white-2" *ngIf="Row.data?.employee.image" src="{{ url + 'static/storage/employee/' + Row.data?.employee.image }}" />
                             <img class="avatar-profile border-white-2" *ngIf="!Row.data?.employee.image" src="assets/img/faces/default-avatar.png" />
                             
                             <br>

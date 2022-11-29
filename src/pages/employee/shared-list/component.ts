@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 
+import { Config } from "src/app/config";
 import { Utils } from "src/shared/classes/utils.class";
 import { Table } from "src/shared/classes/table.class";
 import { Service as ServiceEmployee, FiltersEmployee } from "src/pages/employee/module/service";
@@ -17,6 +18,7 @@ export class ListComponent implements OnInit, OnDestroy {
     private Translation:any = {};
     public Table:Table = new Table();
     public Filters:FiltersEmployee = { limit:40, page:1, delay:0, deleted:1 };
+    public url = Config.api_url;
 	
     @Input() data:any = {}; 
     
@@ -44,6 +46,7 @@ export class ListComponent implements OnInit, OnDestroy {
         this.Table.headerColumns = [ 
             { value:this.Translation["LIST"]["#"], class:"text-center" },	
             { value:this.Translation["LIST"]["ID"], field:"employee.item_id", sortable:false },
+            { value:this.Translation["PROFILE"]["PHOTO"], field:"employee_data.image", sortable:false },
             { value:this.Translation["PROFILE"]["NAMES"], field:"employee_data.names", sortable:false },
             { value:this.Translation["PROFILE"]["SALARY"], field:"employee.salary", sortable:false },
             { value:this.Translation["PROFILE"]["BENEFICIARY"], field:"employee.beneficiary", sortable:false },

@@ -15,6 +15,10 @@
                 <td>{{ i +1 }}</td>
                 <td>{{ row.item_id }}</td>
                 <td>
+                    <img class="avatar border-white-2" *ngIf="row.image" src="{{ url + 'static/storage/employee/' + row.image }}" />
+                    <img class="avatar border-white-2" *ngIf="!row.image" src="assets/img/faces/default-avatar.png" />
+                </td>
+                <td>
                     {{ row.fullname }}
                     <br><small>{{ row.position_job }}</small>
                 </td>
