@@ -1,0 +1,115 @@
+/*
+ *  Author     : @spidermay
+ *  Description: This scss file for pricing page style classes
+ */
+
+.page-pricing {
+	> .content{
+        padding-top: 10vh;
+    }
+
+	.col-lg-3, .col-md-6 {
+		padding-right: 4px;
+		padding-left: 4px;
+	}
+
+	.card {
+		background: $white;
+		border: 0;
+		position: relative;
+		width: 100%;
+		margin:0px;
+		padding: 0px;;
+		margin-bottom: 30px;
+	}
+	
+	.card-pricing {
+		position: relative;
+		z-index: 1;
+		box-shadow: none;
+		min-height: 400px;
+	}
+
+	.card .card-body  {
+		// padding-top: 1px;
+		padding-bottom: 30px;
+	}
+
+	.card .card-body .card-title, h1 {
+		color: $white;
+		text-transform: inherit;
+		font-weight: bolder;
+		line-height: 1.05;
+		font-size: 5em;
+		position: relative;
+		font-size: 5em;
+		font-weight: 900;
+		text-transform: lowercase;
+		z-index: 1;
+		margin-left: -4px;
+	}
+
+	h1, h4 {
+		color: $white;
+	}
+
+	.card-pricing .card-body img {
+		position: absolute;
+		border-radius: 0.2857rem;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 0;
+	}
+
+	.card-pricing .card-footer {
+		padding: 30px;;
+	}
+
+	.card-pricing .list-group-item {
+		background: 0 0;
+	}
+
+	.card-pricing ul {
+		// border: 1px solid #ec250d;
+		padding-bottom: 50px;
+	}
+
+	.card-pricing ul li {
+		color: $black;
+		background: 0 0;
+		text-align: center;
+		font-size: 1.2em;
+		font-weight: 600;
+		padding: 1rem;
+		border: none;
+	}
+
+	.text-on-front {
+		position: relative;
+		z-index: 2;
+		color: $black; //rgba(255,255,255,.9);
+		font-size: 3.6em;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	.text-on-back {
+		position: relative;
+		z-index: 1;
+		font-size: 9.5em;
+		text-align: center;
+		margin-top: -100px;
+		font-weight: 900;
+		color: rgba(38,49,72,.1);
+	}
+
+	.plan {
+		font-weight: 600;
+		font-size: .8em;
+		margin-top: -60px;
+		text-align: center;
+		color: $black; //rgba(255,255,255,.9);
+	}
+
+}

@@ -1,0 +1,78 @@
+/* [ BACKGROUND COLORS ] ////////////////////////////////////////////////////////////////// */
+@each $color, $value in $colors-grays {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-blue {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-indigo {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-purple {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-violet {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-pink {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-red {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-orange {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-yellow {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-green {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-teal {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors-cyan {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}
+
+@each $color, $value in $colors {
+	.bg-#{$color} {
+		background-color: lighten(rgba($value, .8), 30%) !important;
+	}
+}

@@ -1,0 +1,222 @@
+/*           Labels              */
+.label{
+    padding: 0.2em 0.6em 0.2em;
+    // border: 1px solid red !important;
+    border-radius: 3px;
+    color: #999999;
+    background-color: #FFFFFF;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-inline-end: 4px !important;
+}
+
+@each $color, $value in $colors {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-grays {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-blue {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-indigo {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-purple {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-violet {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-pink {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-red {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-orange {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-yellow {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+    
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-green {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-teal {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}
+
+@each $color, $value in $colors-cyan {
+    .label-#{$color}{
+        border-color: $value !important;
+        color: $value !important;
+    }
+
+    .label-#{$color}.label-fill{
+        background-color: $value !important;
+        color: #FFFFFF !important;
+        
+        @if($color == "white") or ($color == "light") or ($color == "neutral") {
+            color: darken($gray, 30%) !important;
+        } 
+    }
+}

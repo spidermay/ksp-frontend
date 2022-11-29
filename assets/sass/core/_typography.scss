@@ -1,0 +1,179 @@
+/*           Font Smoothing      */
+body,
+h1, .h1, 
+h2, .h2, 
+h3, .h3, 
+h4, .h4, 
+h5, .h5, 
+h6, .h6, 
+p, 
+.navbar, 
+.brand, 
+.btn-simple,
+.alert, 
+a, 
+.td-name, 
+td,
+button.close{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+    font-weight: $font-weight-normal;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4{
+    font-weight: $font-weight-light;
+    margin: $margin-large-vertical 0 $margin-base-vertical;
+}
+
+h1, .h1 {
+    font-size: $font-size-h1;
+}
+h2, .h2{
+    font-size: $font-size-h2;
+}
+h3, .h3{
+    font-size: $font-size-h3;
+    margin: 20px 0 10px;
+}
+h4, .h4{
+    font-size: $font-size-h4;
+    line-height: 30px;
+}
+h5, .h5 {
+    font-size: $font-size-h5;
+    margin-bottom: 15px;
+}
+h6, .h6{
+    font-size: $font-size-h6;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+p{
+    font-size: $font-paragraph;
+    line-height: $line-height-general;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+    color: $dark-gray;
+    font-weight: $font-weight-light;
+    line-height: $line-height-general;
+}
+
+h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
+    font-size: 60%;
+}
+
+h1 .subtitle{
+    display: block;
+    margin: 0 0 $margin-large-vertical;   
+}
+
+/* [ TEXT ] ////////////////////////////////////////////////////////////////// */
+@each $color, $value in $colors {
+    .text-#{$color} {
+		color: $value !important;
+    }
+    
+    // .text-#{$color}:hover {
+	// 	color: darken($value, 6%) !important;
+	// }
+}
+
+/* [ Line height ] ------------------------------------------------------------------ */
+@for $i from 1 through 9 {
+    .lh-#{$i} {
+        @for $j from 0 through 9 {
+            line-height: #{$i'.'($j)} !important;
+        }
+	}
+}
+
+/* [ Font size ] ------------------------------------------------------------------ */
+@for $i from 1 through 200 {
+	.fs-#{$i} {
+		font-size: #{$i}px !important;
+	}
+}
+
+.text-muted { color: $gray-500; }
+.text-space { padding: 70px 0; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-top { vertical-align: top !important; }
+.text-middle { vertical-align: middle !important; }
+.text-bold { font-weight: bolder !important; }
+.text-light { font-weight: lighter !important; }
+.text-italic { font-style: italic !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-uppercase input { text-transform: uppercase !important; }
+
+.text-small,
+.text-small p,
+.text-small tr,
+.text-small th {
+	font-size: small;
+    // font-size: 12px !important;
+}
+
+.text-small th {
+    font-weight: bolder !important;
+}
+
+.text-primary, .text-primary:hover{
+    color: $primary-color !important;
+}
+.text-info, .text-info:hover{
+    color: $info-color !important;
+}
+.text-success, .text-success:hover{
+    color: $success-color !important;
+}
+.text-warning, .text-warning:hover{
+    color: $warning-color !important;
+}
+.text-danger, .text-danger:hover{
+    color: $danger-color !important;
+}
+
+.text-start {
+    -webkit-box-align: start !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important; 
+}
+
+.text-end {
+    -webkit-box-align: end !important;
+    -ms-flex-align: end !important;
+    align-items: flex-end !important; 
+}
+
+.text-start-justify {
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important; }
+  
+.text-end-justify {
+    -webkit-box-pack: end !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important; 
+}
+  
+.text-center-justify {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important; 
+}
+  
+.text-between-justify {
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important; 
+}
+  
+.text-around-justify {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important; 
+}
+  

@@ -1,0 +1,132 @@
+.not-shadow { box-shadow: none !important; }
+
+.image-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.image-mini {
+    width: 25px;
+    height: 25px;
+    // border-radius: 50%;
+}
+
+.image-profile {
+    height: 100px;
+    // border-radius: 50%;
+}
+
+.footer-info {
+    padding-top: 20px;
+    /* border: 1px solid red; */
+}
+
+.label-title {
+    font-size: 12px;
+    margin-bottom: 5px !important;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #888888;
+}
+
+.drag-panel {
+    cursor: move;
+}
+
+.drag-trash {
+    margin-top: 10px;
+    padding-right: 10px;
+    height: 100px;
+    width: 100px;
+    color: $red;
+    border: 1px dashed $red;
+}
+
+.drag-trash i {
+    margin-top: 10px;
+    font-size: 3em;
+}
+
+.drag-trash p {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+table.special-bordered {
+    border-top: 1px solid $smoke;
+    border-bottom: 1px solid $smoke;
+}
+
+.table .striped {
+    background: $smoke;
+}
+
+table.special-bordered thead td,
+table.special-bordered tbody td {
+    border: 1px solid $smoke;
+    border-bottom: 1px solid $smoke;
+}
+
+.swal-text {
+    text-align: center !important;
+}
+.swal-footer {
+    text-align: center !important;
+}
+.swal-bottom {
+    margin-bottom: 15px;
+}
+
+
+
+// .panel-title {
+//     padding-left: 15px !important;
+// }
+
+/* //-------> FOR FIXED STICKY <--------// */
+.sticky {
+    top: 0;
+    z-index:1;
+    min-width: 92%;
+    position: fixed;
+}
+  
+.sticky + .content {
+    padding-top: 500px;
+} 
+
+.sticky-content {
+    padding-top: 500px !important;
+    /* border: 1px solid red; */
+} 
+
+.trumbowyg-box, 
+.trumbowyg-editor, 
+.trumbowyg-editor,
+.trumbowyg-textarea { 
+    margin: 0px !important;
+    min-height: 450px !important; 
+}
+
+.ck-editor__editable {
+    min-height: 200px !important;
+}
+
+.mouse-default{
+    cursor: default;
+}
+
+.media-body, .media-left, .media-right {
+    vertical-align: "" !important;
+}
+
+.avatar-profile {
+    width: 124px;
+    height: 124px;
+    border: 5px solid #EEEEEE;
+    position: relative;
+    // top: -30px;
+    border-radius: 50%;
+    margin-left: calc(25% + 62px);
+}

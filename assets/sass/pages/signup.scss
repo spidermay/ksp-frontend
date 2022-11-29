@@ -1,0 +1,25 @@
+/*
+ *  Author     : @spidermay
+ *  Description: This scss file for pricing page style classes
+ */
+
+.page-signup {
+	> .content{
+        padding-top: 10vh;
+    }
+
+	.card {
+		background: $white;
+		border: 0;
+		position: relative;
+		width: 100%;
+		margin:0px;
+		padding: 0px;;
+		margin-bottom: 30px;
+	}
+
+	.card .category, .card .form-group > label, h4 small {
+		color: $white !important;
+	}
+	
+}
